@@ -8,6 +8,6 @@ npm install
 npm start &
 
 # Start the frontend server
-cd ../daily-earn-frontend
+cd daily-earn-frontend
 npm install
 npm start &
