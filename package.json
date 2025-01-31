@@ -1,10 +1,12 @@
 {
-  "name": "daily-earn-backend",
+  "name": "daily-earn",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm start --prefix daily-earn-backend",
+    "client": "npm start --prefix daily-earn-frontend",
+    "postinstall": "npm install -g concurrently"
   },
   "keywords": [],
   "author": "",
