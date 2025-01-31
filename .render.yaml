@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: daily-earn-backend
+    env: node
+    plan: free
+    buildCommand: cd daily-earn-backend && npm install
+    startCommand: cd daily-earn-backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        fromDatabase: daily-earn-db
+      - key: MONGODB_URI
+        fromDatabase: daily-earn-db
+
+  - type: web
+    name: daily-earn-frontend
+    env: node
+    plan: free
+    buildCommand: cd daily-earn-frontend && npm install && npm run build
+    startCommand: cd daily-earn-frontend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
